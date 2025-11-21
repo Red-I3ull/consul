@@ -16,7 +16,7 @@ global:
 
 server:
   replicas: 3
-  updatePartition: 2
+#  updatePartition: 2
   storageClass: gp2
 
 connectInject:

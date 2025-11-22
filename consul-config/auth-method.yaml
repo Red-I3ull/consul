@@ -1,28 +1,28 @@
-apiVersion: consul.hashicorp.com/v1alpha1
-kind: AuthMethod
-metadata:
-  name: kubernetes
-  namespace: consul
-spec:
-  type: kubernetes
-  displayName: Kubernetes Auth Method
-  tokenLocality: local
-  config:
-    host: "https://kubernetes.default.svc"
-    caCert: |
-      -----BEGIN CERTIFICATE-----
-      # this will be automatically populated by the consul helm chart
-      -----END CERTIFICATE-----
-    useJWT: true
----
-apiVersion: consul.hashicorp.com/v1alpha1
-kind: BindingRule
-metadata:
-  name: kubernetes-binding-rule
-  namespace: consul
-spec:
-  authMethod: kubernetes
-  bindType: service
-  bindName: ${serviceaccount.name}
-  selector: |
-    serviceaccount.namespace==consul or serviceaccount.namespace==app-namespace
+#apiVersion: consul.hashicorp.com/v1alpha1
+#kind: AuthMethod
+#metadata:
+#  name: kubernetes
+#  namespace: consul
+#spec:
+#  type: kubernetes
+#  displayName: Kubernetes Auth Method
+#  tokenLocality: local
+#  config:
+#    host: "https://kubernetes.default.svc"
+#    caCert: |
+#      -----BEGIN CERTIFICATE-----
+#      # this will be automatically populated by the consul helm chart
+#      -----END CERTIFICATE-----
+#    useJWT: true
+#---
+#apiVersion: consul.hashicorp.com/v1alpha1
+#kind: BindingRule
+#metadata:
+#  name: kubernetes-binding-rule
+#  namespace: consul
+#spec:
+#  authMethod: kubernetes
+#  bindType: service
+#  bindName: ${serviceaccount.name}
+#  selector: |
+#    serviceaccount.namespace==consul or serviceaccount.namespace==app-namespace

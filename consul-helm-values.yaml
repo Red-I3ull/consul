@@ -28,3 +28,6 @@ meshGateway:
 
 authMethod:
   type: kubernetes
+
+controller:
+  enabled: true

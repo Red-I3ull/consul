@@ -10,18 +10,21 @@ global:
 
   acls:
     manageSystemACLs: true
-    k8sAuthMethodHost: "https://oidc.eks.us-east-1.amazonaws.com/id/63C2D9CFAB49A26CFC75EC8E5E9F55D0"
-
-  argocd:
-    enabled: true
+    auth-method:
+      type: kubernetes
+    argocd:
+     enabled: true
 
 server:
   replicas: 3
-#  updatePartition: 2
   storageClass: gp2
 
 connectInject:
   enabled: true
+  k8sAuthMethodHost: "https://kubernetes.default.svc"
 
 meshGateway:
   enabled: true
+
+authMethod:
+  type: kubernetes

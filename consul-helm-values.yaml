@@ -14,12 +14,20 @@ global:
   acls:
     # If true, automatically manage ACL tokens and policies for all Consul components.
     manageSystemACLs: true
+
 # Configures values that configure the Consul server cluster.
 server:
   enabled: true
   # The number of server agents to run. This determines the fault tolerance of the cluster.
   replicas: 3
   storageClass: gp2
+
+# Configure Consul Connect injection
+connectInject:
+  enabled: true
+  # Automatically inject the Connect sidecar for pods with the annotation
+  default: false
+
 # Contains values that configure the Consul UI.
 ui:
   enabled: true

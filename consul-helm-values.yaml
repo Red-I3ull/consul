@@ -10,10 +10,6 @@ global:
 
   acls:
     manageSystemACLs: true
-    auth-method:
-      type: kubernetes
-    argocd:
-     enabled: true
 
 server:
   replicas: 3
@@ -21,10 +17,12 @@ server:
 
 connectInject:
   enabled: true
-  k8sAuthMethodHost: "https://kubernetes.default.svc"
 
 meshGateway:
   enabled: true
 
 controller:
+  enabled: true
+
+serverACLInit:
   enabled: true

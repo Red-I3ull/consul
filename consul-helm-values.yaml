@@ -29,9 +29,9 @@ connectInject:
   default: false
 
 # Contains values that configure the Consul UI.
-#ui:
-#  enabled: true
-#  # Registers a Kubernetes Service for the Consul UI as a NodePort.
-#  service:
-#    #type: NodePort
-#    type: 'LoadBalancer'
+ui:
+  enabled: true
+  # Registers a Kubernetes Service for the Consul UI as a NodePort.
+  service:
+    #type: NodePort
+    type: 'LoadBalancer'

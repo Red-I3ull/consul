@@ -35,3 +35,12 @@ ui:
   service:
     #type: NodePort
     type: 'LoadBalancer'
+
+ingressGateways:
+  enabled: true
+  defaults:
+    replicas: 1
+    service:
+      type: ClusterIP # The ALB will target this service
+  gateways:
+    - name: ingress-gateway

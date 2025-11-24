@@ -44,3 +44,6 @@ ingressGateways:
       type: ClusterIP # The ALB will target this service
   gateways:
     - name: ingress-gateway
+      serviceAccount:
+        create: true      # <--- Ensure this is true
+        name: ""
